@@ -2,17 +2,17 @@
 // Waypoints trace the Adriatic + Balkan coast/interior south-east.
 
 const WAYPOINTS = [
-  { pct: 0,   name: "Cattolica",   country: "🇮🇹 Italia",       emoji: "🌞",   lat: 43.9700, lon: 12.7400, quote: "Tutto bene, il sole splende sulla riviera." },
-  { pct: 8,   name: "Rimini",      country: "🇮🇹 Italia",       emoji: "🍦",   lat: 44.0678, lon: 12.5695, quote: "Gelato, aperitivo, zero drama." },
-  { pct: 18,  name: "Trieste",     country: "🇮🇹 Italia (mixed)", emoji: "☕",   lat: 45.6495, lon: 13.7768, quote: "Un caffè, ma già si sente l'aria di confine." },
-  { pct: 28,  name: "Koper",       country: "🇸🇮 Slovenija",    emoji: "🙂",   lat: 45.5481, lon: 13.7302, quote: "Prima parola slava. Ancora sorride, per ora." },
+  { pct: 0,   name: "Cattolica",   country: "🇮🇹 Italia",       emoji: "🌞",   lat: 43.9700, lon: 12.7400, quote: "Tutto bene, prendiamo pizzetta da Staccoli." },
+  { pct: 8,   name: "Rimini",      country: "🇮🇹 Italia",       emoji: "🍦",   lat: 44.0678, lon: 12.5695, quote: "Gelato, aperitivo, circles" },
+  { pct: 18,  name: "Trieste",     country: "🇮🇹 Italia (mixed)", emoji: "☕",   lat: 45.6495, lon: 13.7768, quote: "Comincio a non rispondere a alcune domande" },
+  { pct: 28,  name: "Koper",       country: "🇸🇮 Slovenija",    emoji: "🙂",   lat: 45.5481, lon: 13.7302, quote: "Making Grrrr sound, smiling" },
   { pct: 38,  name: "Pula",        country: "🇭🇷 Hrvatska",    emoji: "😐",   lat: 44.8666, lon: 13.8496, quote: "Ha risposto 'ok'. Solo 'ok'. Attenzione." },
-  { pct: 48,  name: "Zadar",       country: "🇭🇷 Hrvatska",    emoji: "😒",   lat: 44.1194, lon: 15.2314, quote: "Sguardo di traverso. Sospiro. Voltata dall'altra parte." },
-  { pct: 58,  name: "Split",       country: "🇭🇷 Hrvatska",    emoji: "😤",   lat: 43.5081, lon: 16.4402, quote: "Silenzio radio da 20 minuti. Cattivo segno." },
-  { pct: 68,  name: "Dubrovnik",   country: "🇭🇷 Hrvatska",    emoji: "🙄",   lat: 42.6507, lon: 18.0944, quote: "Ha detto 'fai come vuoi'. Non fare come vuoi." },
-  { pct: 78,  name: "Kotor",       country: "🇲🇪 Crna Gora",   emoji: "😠",   lat: 42.4247, lon: 18.7712, quote: "Sopracciglia. Braccia incrociate. Nessuna via d'uscita." },
-  { pct: 88,  name: "Budva",       country: "🇲🇪 Crna Gora",   emoji: "🤬",   lat: 42.2911, lon: 18.8403, quote: "Ha iniziato a parlare in russo. Livello: allarme rosso." },
-  { pct: 100, name: "Montenegro",  country: "🇲🇪 Crna Gora",   emoji: "☢️",   img: "montenegro.jpg", lat: 42.7087, lon: 19.3744, quote: "Risponde 'c'è' senza fare vedere." },
+  { pct: 48,  name: "Zadar",       country: "🇭🇷 Hrvatska",    emoji: "😒",   lat: 44.1194, lon: 15.2314, quote: "risponde con 👍" },
+  { pct: 58,  name: "Split",       country: "🇭🇷 Hrvatska",    emoji: "😤",   lat: 43.5081, lon: 16.4402, quote: "👍, 45min later" },
+  { pct: 68,  name: "Dubrovnik",   country: "🇭🇷 Hrvatska",    emoji: "🙄",   lat: 42.6507, lon: 18.0944, quote: "👍, 1.5h later" },
+  { pct: 78,  name: "Kotor",       country: "🇲🇪 Crna Gora",   emoji: "😠",   lat: 42.4247, lon: 18.7712, quote: "Silence, only sending reels on Instagram" },
+  { pct: 88,  name: "Budva",       country: "🇲🇪 Crna Gora",   emoji: "🤬",   lat: 42.2911, lon: 18.8403, quote: "Shows she's on Instagram, but no reels" },
+  { pct: 100, name: "Montenegro",  country: "🇲🇪 Crna Gora",   emoji: "☢️",   img: "montenegro.jpg", lat: 42.7087, lon: 19.3744, quote: "Risponde 'c'è' senza mandare circle push." },
 ];
 
 const map = L.map('map', { zoomControl: true, scrollWheelZoom: false })
