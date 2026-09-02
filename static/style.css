@@ -104,6 +104,10 @@ main {
 .mood {
   grid-row: 1 / 3;
   text-align: right;
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .emoji {
   font-size: 44px;
