@@ -12,7 +12,7 @@ const WAYPOINTS = [
   { pct: 68,  name: "Dubrovnik",   country: "🇭🇷 Hrvatska",    emoji: "🙄",   lat: 42.6507, lon: 18.0944, quote: "Ha detto 'fai come vuoi'. Non fare come vuoi." },
   { pct: 78,  name: "Kotor",       country: "🇲🇪 Crna Gora",   emoji: "😠",   lat: 42.4247, lon: 18.7712, quote: "Sopracciglia. Braccia incrociate. Nessuna via d'uscita." },
   { pct: 88,  name: "Budva",       country: "🇲🇪 Crna Gora",   emoji: "🤬",   lat: 42.2911, lon: 18.8403, quote: "Ha iniziato a parlare in russo. Livello: allarme rosso." },
-  { pct: 100, name: "Podgorica",   country: "🇲🇪 Crna Gora",   emoji: "☢️",   lat: 42.4304, lon: 19.2594, quote: "Risponde 'c'è' senza fare vedere." },
+  { pct: 100, name: "Montenegro",  country: "🇲🇪 Crna Gora",   emoji: "☢️",   lat: 42.7087, lon: 19.3744, quote: "Risponde 'c'è' senza fare vedere." },
 ];
 
 const map = L.map('map', { zoomControl: true, scrollWheelZoom: false })

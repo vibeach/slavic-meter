@@ -35,7 +35,7 @@ WAYPOINTS = [
     (68,  "Dubrovnik",  "🇭🇷 Hrvatska",      "🙄"),
     (78,  "Kotor",      "🇲🇪 Crna Gora",     "😠"),
     (88,  "Budva",      "🇲🇪 Crna Gora",     "🤬"),
-    (100, "Podgorica",  "🇲🇪 Crna Gora",     "☢️"),
+    (100, "Montenegro", "🇲🇪 Crna Gora",     "☢️"),
 ]
 
 
