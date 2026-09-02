@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Slavic Meter · From Cattolica to Montenegro</title>
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😤</text></svg>">
+</head>
+<body data-level="0">
+  <header>
+    <h1><span id="titleMain">Slavic</span> <span id="titleSub">Meter</span></h1>
+    <p class="tag">from <b>Cattolica</b> 🌞 to <b>Montenegro</b> 😤</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="flag" id="flag"></div>
+      <div class="city">
+        <span class="city-name" id="cityName">Cattolica</span>
+        <span class="city-country" id="cityCountry">🇮🇹 Italia</span>
+      </div>
+      <div class="mood">
+        <div class="emoji" id="moodEmoji">😊</div>
+        <div class="pct" id="pctLabel">0%</div>
+      </div>
+      <blockquote id="quote">Tutto bene, il sole splende sulla riviera.</blockquote>
+    </section>
+
+    <section class="slider-wrap">
+      <input id="slider" type="range" min="0" max="100" step="0.5" value="0" aria-label="Slavic level">
+      <div class="slider-endpoints">
+        <span>😊 Cattolica</span>
+        <span>😤 Podgorica</span>
+      </div>
+      <div class="log-row">
+        <input id="note" type="text" placeholder="una nota? (opzionale)" maxlength="280">
+        <button id="saveBtn" type="button">📌 Registra</button>
+      </div>
+      <div id="saveMsg" class="save-msg"></div>
+    </section>
+
+    <section class="map-wrap">
+      <div id="map"></div>
+    </section>
+
+    <section class="waypoints" id="waypoints"></section>
+  </main>
+
+  <footer>
+    <small>Argento Labs · Made with 🌊 and mild passive-aggression</small>
+  </footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
