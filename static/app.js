@@ -2,8 +2,8 @@
 // Waypoints trace the Adriatic + Balkan coast/interior south-east.
 
 const WAYPOINTS = [
-  { pct: 0,   name: "Cattolica",   country: "🇮🇹 Italia",       emoji: "🌞",   lat: 43.9700, lon: 12.7400, quote: "Tutto bene, prendiamo pizzetta da Staccoli." },
-  { pct: 8,   name: "Rimini",      country: "🇮🇹 Italia",       emoji: "🍦",   lat: 44.0678, lon: 12.5695, quote: "Gelato, aperitivo, circles" },
+  { pct: 0,   name: "Cattolica",   country: "🇮🇹 Italia",       emoji: "🌞",   lat: 43.9700, lon: 12.7400, quote: "Prendiamo pizzetta da Staccoli, circles celebration." },
+  { pct: 8,   name: "Rimini",      country: "🇮🇹 Italia",       emoji: "🍦",   lat: 44.0678, lon: 12.5695, quote: "Visitiamo Duomo insieme, messaggi con animali" },
   { pct: 18,  name: "Trieste",     country: "🇮🇹 Italia (mixed)", emoji: "☕",   lat: 45.6495, lon: 13.7768, quote: "Comincio a non rispondere a alcune domande" },
   { pct: 28,  name: "Koper",       country: "🇸🇮 Slovenija",    emoji: "🙂",   lat: 45.5481, lon: 13.7302, quote: "Making Grrrr sound, smiling" },
   { pct: 38,  name: "Pula",        country: "🇭🇷 Hrvatska",    emoji: "😐",   lat: 44.8666, lon: 13.8496, quote: "Ha risposto 'ok'. Solo 'ok'. Attenzione." },
