@@ -12,7 +12,7 @@ const WAYPOINTS = [
   { pct: 68,  name: "Dubrovnik",   country: "🇭🇷 Hrvatska",    emoji: "🙄",   lat: 42.6507, lon: 18.0944, quote: "👍, 1.5h later" },
   { pct: 78,  name: "Kotor",       country: "🇲🇪 Crna Gora",   emoji: "😠",   lat: 42.4247, lon: 18.7712, quote: "Silence, only sending reels on Instagram" },
   { pct: 88,  name: "Budva",       country: "🇲🇪 Crna Gora",   emoji: "🤬",   lat: 42.2911, lon: 18.8403, quote: "Shows she's on Instagram, but no reels" },
-  { pct: 100, name: "Montenegro",  country: "🇲🇪 Crna Gora",   emoji: "☢️",   img: "montenegro.jpg", lat: 42.7087, lon: 19.3744, quote: "Risponde 'c'è' senza mandare circle push." },
+  { pct: 100, name: "Montenegro",  country: "🇲🇪 Crna Gora",   emoji: "🐍",   img: "montenegro.jpg", lat: 42.7087, lon: 19.3744, quote: "Risponde 'c'è' senza mandare circle push." },
 ];
 
 const map = L.map('map', { zoomControl: true, scrollWheelZoom: false })

@@ -70,7 +70,12 @@ main {
   gap: 8px 18px;
   align-items: center;
   transition: transform 0.25s ease;
+  color: #17202a;
 }
+/* Slider wrap + waypoint buttons also sit on light bgs regardless of --fg,
+   so lock their text dark to keep contrast at high slavic levels. */
+.slider-wrap { color: #17202a; }
+.wp-btn { color: #17202a; }
 .card:hover { transform: translateY(-2px); }
 
 .flag {
