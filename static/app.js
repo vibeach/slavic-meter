@@ -88,7 +88,7 @@ function nearest(pct) {
 const wpContainer = document.getElementById('waypoints');
 function iconHtml(w, klass) {
   return w.img
-    ? `<img class="${klass} wp-icon-img" src="${w.img}" alt="${w.name}">`
+    ? `<img class="${klass} wp-icon-img" src="/static/${w.img}" alt="${w.name}">`
     : `<span class="${klass}">${w.emoji}</span>`;
 }
 WAYPOINTS.forEach((w, idx) => {
@@ -130,7 +130,7 @@ function update(pct) {
   cityCountry.textContent = near.country;
   // Mood card: image when provided, emoji otherwise
   if (near.img) {
-    moodEmoji.innerHTML = `<img class="mood-img" src="${near.img}" alt="${near.name}">`;
+    moodEmoji.innerHTML = `<img class="mood-img" src="/static/${near.img}" alt="${near.name}">`;
   } else {
     moodEmoji.textContent = near.emoji;
   }
@@ -141,7 +141,7 @@ function update(pct) {
   const cm = cursorMarker();
   if (cm) {
     if (near.img) {
-      cm.innerHTML = `<img src="${near.img}" alt="${near.name}" style="width:100%;height:100%;border-radius:50%;object-fit:cover">`;
+      cm.innerHTML = `<img src="/static/${near.img}" alt="${near.name}" style="width:100%;height:100%;border-radius:50%;object-fit:cover">`;
     } else {
       cm.textContent = near.emoji;
     }
@@ -236,8 +236,9 @@ noteInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveEntry();
 const sweetsBtn = document.getElementById('sweetsBtn');
 const sweetsReveal = document.getElementById('sweetsReveal');
 const SWEETS_IMGS = [
-  'sweets-truck-1.jpg', 'sweets-truck-2.jpg', 'sweets-truck-3.jpg',
-  'sweets-truck-4.jpg', 'sweets-truck-5.jpg'
+  '/static/sweets-truck-1.jpg', '/static/sweets-truck-2.jpg',
+  '/static/sweets-truck-3.jpg', '/static/sweets-truck-4.jpg',
+  '/static/sweets-truck-5.jpg'
 ];
 let sweetsIdx = 0;
 const sweetsImg = document.getElementById('sweetsImg');
