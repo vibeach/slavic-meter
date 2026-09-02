@@ -64,22 +64,23 @@ main {
   border-radius: 18px;
   padding: 22px 24px;
   box-shadow: var(--shadow);
-  display: grid;
-  grid-template-columns: 60px minmax(0, 1fr) 120px;
-  grid-template-rows: auto auto;
-  gap: 8px 18px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   transition: transform 0.25s ease;
   color: #17202a;
 }
-/* Slider wrap + waypoint buttons also sit on light bgs regardless of --fg,
-   so lock their text dark to keep contrast at high slavic levels. */
+.card-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
 .slider-wrap { color: #17202a; }
 .wp-btn { color: #17202a; }
 .card:hover { transform: translateY(-2px); }
 
 .flag {
-  grid-row: 1 / 3;
+  flex: 0 0 60px;
   width: 60px; height: 60px;
   border-radius: 12px;
   background: #eee;
@@ -90,7 +91,7 @@ main {
   font-size: 36px;
 }
 
-.city { display: flex; flex-direction: column; }
+.city { flex: 1 1 auto; display: flex; flex-direction: column; min-width: 0; }
 .city-name {
   font-size: 26px;
   font-weight: 800;
@@ -102,16 +103,14 @@ main {
 }
 
 .mood {
-  grid-row: 1 / 3;
+  flex: 0 0 auto;
   text-align: right;
-  min-width: 110px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
   gap: 4px;
 }
-.mood > .emoji { overflow: visible; }
 .emoji {
   font-size: 44px;
   line-height: 1;
