@@ -246,3 +246,24 @@ sweetsBtn.addEventListener('click', () => {
     sweetsBtn.textContent = '🍬 Get sweets';
   }
 });
+
+// ── Topo video reveal ─────────────────────────────────────────
+const topoBtn = document.getElementById('topoBtn');
+const topoReveal = document.getElementById('topoReveal');
+topoBtn.addEventListener('click', () => {
+  const wasHidden = topoReveal.hasAttribute('hidden');
+  if (wasHidden) {
+    topoReveal.removeAttribute('hidden');
+    topoBtn.textContent = '🎥 hide video';
+    setTimeout(() => {
+      topoReveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      const v = topoReveal.querySelector('video');
+      if (v) v.play().catch(() => {});
+    }, 100);
+  } else {
+    const v = topoReveal.querySelector('video');
+    if (v) v.pause();
+    topoReveal.setAttribute('hidden', '');
+    topoBtn.textContent = '🐭 check video Topo made for Mamma at party on first day';
+  }
+});
