@@ -235,16 +235,25 @@ noteInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveEntry();
 // ── Sweets reveal ─────────────────────────────────────────────
 const sweetsBtn = document.getElementById('sweetsBtn');
 const sweetsReveal = document.getElementById('sweetsReveal');
+const SWEETS_IMGS = [
+  'sweets-truck-1.jpg', 'sweets-truck-2.jpg', 'sweets-truck-3.jpg',
+  'sweets-truck-4.jpg', 'sweets-truck-5.jpg'
+];
+let sweetsIdx = 0;
+const sweetsImg = document.getElementById('sweetsImg');
 sweetsBtn.addEventListener('click', () => {
-  const wasHidden = sweetsReveal.hasAttribute('hidden');
-  if (wasHidden) {
+  // First click reveals; subsequent clicks rotate to a NEW random image
+  if (sweetsReveal.hasAttribute('hidden')) {
     sweetsReveal.removeAttribute('hidden');
-    sweetsBtn.textContent = '💖 Sweets on the way';
-    setTimeout(() => sweetsReveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
   } else {
-    sweetsReveal.setAttribute('hidden', '');
-    sweetsBtn.textContent = '🍬 Get sweets';
+    // Pick a NEW random image different from current
+    let next;
+    do { next = Math.floor(Math.random() * SWEETS_IMGS.length); }
+    while (SWEETS_IMGS.length > 1 && next === sweetsIdx);
+    sweetsIdx = next;
+    sweetsImg.src = SWEETS_IMGS[sweetsIdx];
   }
+  setTimeout(() => sweetsReveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
 });
 
 // ── Topo video reveal ─────────────────────────────────────────
