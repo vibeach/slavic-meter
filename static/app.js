@@ -182,14 +182,22 @@ function animateTo(target, dur = 700) {
 
 slider.addEventListener('input', e => update(parseFloat(e.target.value)));
 
-// Initial paint
-update(0);
+// Initial paint (honour ?pct= or #pct= for shareable state)
+const initPct = (() => {
+  const m = window.location.search.match(/pct=(\d+(?:\.\d+)?)/) ||
+            window.location.hash.match(/pct=(\d+(?:\.\d+)?)/);
+  return m ? Math.max(0, Math.min(100, parseFloat(m[1]))) : 0;
+})();
+slider.value = initPct;
+update(initPct);
 
-// Little idle-nudge: on first load, cheekily wiggle the slider to hint UX
-window.addEventListener('load', () => {
-  setTimeout(() => animateTo(30, 900), 600);
-  setTimeout(() => animateTo(0, 900), 1700);
-});
+// Little idle-nudge only when landing at default 0 — skip if ?pct= given
+if (initPct === 0) {
+  window.addEventListener('load', () => {
+    setTimeout(() => animateTo(30, 900), 600);
+    setTimeout(() => animateTo(0, 900), 1700);
+  });
+}
 
 // ── Save entry to backend ─────────────────────────────────────
 const saveBtn = document.getElementById('saveBtn');
@@ -223,3 +231,18 @@ async function saveEntry() {
 }
 saveBtn.addEventListener('click', saveEntry);
 noteInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveEntry(); });
+
+// ── Sweets reveal ─────────────────────────────────────────────
+const sweetsBtn = document.getElementById('sweetsBtn');
+const sweetsReveal = document.getElementById('sweetsReveal');
+sweetsBtn.addEventListener('click', () => {
+  const wasHidden = sweetsReveal.hasAttribute('hidden');
+  if (wasHidden) {
+    sweetsReveal.removeAttribute('hidden');
+    sweetsBtn.textContent = '💖 Sweets on the way';
+    setTimeout(() => sweetsReveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+  } else {
+    sweetsReveal.setAttribute('hidden', '');
+    sweetsBtn.textContent = '🍬 Get sweets';
+  }
+});
