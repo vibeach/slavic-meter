@@ -71,6 +71,11 @@ def db() -> sqlite3.Connection:
         ip TEXT,
         ua TEXT)""")
     c.execute("CREATE INDEX IF NOT EXISTS idx_entry_ts ON entry(ts)")
+    c.execute("""CREATE TABLE IF NOT EXISTS call_request(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        ts INTEGER NOT NULL,
+        ip TEXT,
+        ua TEXT)""")
     return c
 
 
@@ -105,6 +110,36 @@ def api_log():
         c.close()
     return jsonify({"ok": True, "id": eid, "city": city, "emoji": emoji,
                     "country": country, "value": round(value, 1)})
+
+
+@app.route("/api/call-ask", methods=["POST"])
+def api_call_ask():
+    c = db()
+    try:
+        cur = c.execute(
+            "INSERT INTO call_request(ts, ip, ua) VALUES(?,?,?)",
+            (int(time.time()),
+             request.headers.get("X-Forwarded-For",
+                                 request.remote_addr or "")[:64],
+             (request.headers.get("User-Agent") or "")[:200]))
+        c.commit()
+        cid = cur.lastrowid
+    finally:
+        c.close()
+    return jsonify({"ok": True, "id": cid})
+
+
+@app.route("/api/call-requests")
+def api_call_requests():
+    if not ADMIN_KEY or request.args.get("key") != ADMIN_KEY:
+        abort(403)
+    limit = min(int(request.args.get("limit", 200)), 2000)
+    c = db(); c.row_factory = sqlite3.Row
+    rows = [dict(r) for r in c.execute(
+        "SELECT id, ts, ip, ua FROM call_request ORDER BY ts DESC LIMIT ?",
+        (limit,))]
+    c.close()
+    return jsonify(rows)
 
 
 @app.route("/api/entries")

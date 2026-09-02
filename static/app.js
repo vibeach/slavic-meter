@@ -257,6 +257,28 @@ sweetsBtn.addEventListener('click', () => {
   setTimeout(() => sweetsReveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
 });
 
+// ── Call ask ──────────────────────────────────────────────────
+const callAskBtn = document.getElementById('callAskBtn');
+const callAskMsg = document.getElementById('callAskMsg');
+callAskBtn.addEventListener('click', async () => {
+  callAskBtn.disabled = true;
+  callAskMsg.textContent = 'invio...';
+  callAskMsg.className = 'callask-msg';
+  try {
+    const r = await fetch('/api/call-ask', { method: 'POST' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    callAskMsg.textContent = `📨 richiesta chiamata inviata (#${j.id})`;
+    callAskMsg.className = 'callask-msg ok';
+  } catch (e) {
+    callAskMsg.textContent = '❌ errore: ' + e.message;
+    callAskMsg.className = 'callask-msg err';
+  } finally {
+    setTimeout(() => { callAskBtn.disabled = false; }, 3000);
+    setTimeout(() => { callAskMsg.textContent = ''; callAskMsg.className = 'callask-msg'; }, 6000);
+  }
+});
+
 // ── Topo video reveal ─────────────────────────────────────────
 const topoBtn = document.getElementById('topoBtn');
 const topoReveal = document.getElementById('topoReveal');
